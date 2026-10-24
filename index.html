@@ -690,7 +690,7 @@ a.sp-free:hover{border-color:var(--green);color:var(--green-dark);box-shadow:non
     </div>
     <div class="avi-sum" id="avisum"></div>
     <ol class="avi-list" id="avilist"></ol>
-    <p class="avi-note">Distancias medidas sobre el track GPS de la V edición. Los tiempos de corte se publicarán próximamente.</p>
+    <p class="avi-note">Distancias medidas sobre el track GPS de la V edición. Consulta los horarios de cierre de cada corte en el <a href="#art7">reglamento</a>.</p>
   </div>
 </section>
 
@@ -762,7 +762,7 @@ a.sp-free:hover{border-color:var(--green);color:var(--green-dark);box-shadow:non
       </details>
       <details class="art" id="art2">
         <summary><span class="art-n">02</span>Modalidades y horarios<span class="art-x">+</span></summary>
-        <div class="art-body"><ul><li><strong>Ultra 70K</strong> — 70 km y 3.000 m de desnivel positivo. Salida a las <strong>8:00 h</strong>. Tiempo máximo: <strong>12 horas</strong>. Plazas: <strong>150</strong>.</li><li><strong>Trail 25K</strong> — 25 km y 1.000 m de desnivel positivo. Salida a las <strong>10:00 h</strong>. Tiempo máximo: <strong>5 horas</strong>. Plazas: <strong>200</strong>.</li></ul><p>El cronómetro se pone en marcha a la hora prevista, estén o no todos los corredores en la línea de salida. Tomar la salida con <strong>más de 15 minutos de retraso</strong> supone la descalificación.</p></div>
+        <div class="art-body"><ul><li><strong>Ultra 70K</strong> — 70 km y 3.000 m de desnivel positivo. Salida a las <strong>7:30 h</strong>. Tiempo máximo: <strong>12 h 30 min</strong> (entrada en meta antes de las 20:00 h). Plazas: <strong>150</strong>.</li><li><strong>Trail 25K</strong> — 25 km y 1.000 m de desnivel positivo. Salida a las <strong>10:00 h</strong>. Tiempo máximo: <strong>5 horas</strong> (entrada en meta antes de las 15:00 h). Plazas: <strong>200</strong>.</li></ul><p>El cronómetro se pone en marcha a la hora prevista, estén o no todos los corredores en la línea de salida. Tomar la salida con <strong>más de 15 minutos de retraso</strong> supone la descalificación.</p></div>
       </details>
       <details class="art" id="art3">
         <summary><span class="art-n">03</span>Requisitos de participación<span class="art-x">+</span></summary>
@@ -782,7 +782,7 @@ a.sp-free:hover{border-color:var(--green);color:var(--green-dark);box-shadow:non
       </details>
       <details class="art" id="art7">
         <summary><span class="art-n">07</span>Avituallamientos<span class="art-x">+</span></summary>
-        <div class="art-body"><p><strong>Ultra 70K</strong> — 7 avituallamientos en carrera (Los Molinos, Castañuelo, Cortelazor, Valdelarco, Los Marines, Alájar y Linares de la Sierra) más el de meta. No todos son puntos de control.</p><p><strong>Trail 25K</strong> — 3 avituallamientos en carrera (Los Molinos, Los Marines y Linares de la Sierra) más el de meta.</p><p>Los tiempos de corte de cada modalidad se publicarán próximamente.</p></div>
+        <div class="art-body"><p><strong>Ultra 70K</strong> — 7 avituallamientos en carrera (Los Molinos, Castañuelo, Cortelazor, Valdelarco, Los Marines, Alájar y Linares de la Sierra) más el de meta. No todos son puntos de control.</p><p><strong>Trail 25K</strong> — 3 avituallamientos en carrera (Los Molinos, Los Marines y Linares de la Sierra) más el de meta.</p><p><strong>Cortes de paso — Ultra 70K:</strong></p><ul><li><strong>Valdelarco (km 29)</strong> — cierre a las <strong>12:30 h</strong> (5:00 h de competición).</li><li><strong>Arroyo Plasencia · Linares de la Sierra (km 51)</strong> — cierre a las <strong>16:30 h</strong> (9:00 h de competición). Corte estricto: quien llegue después no hace el bucle a Alájar y Los Madroñeros y baja directo a Linares de la Sierra (se ahorra 10 km y 400 m+); cuenta como finisher pero queda fuera de podio.</li><li><strong>Meta</strong> — cierre a las <strong>20:00 h</strong> (12 h 30 min de competición).</li></ul><p><strong>Cortes de paso — Trail 25K:</strong></p><ul><li><strong>Los Marines (km 12)</strong> — cierre a las <strong>12:15 h</strong> (2:15 h de competición).</li><li><strong>Meta</strong> — cierre a las <strong>15:00 h</strong> (5:00 h de competición).</li></ul></div>
       </details>
       <details class="art" id="art8">
         <summary><span class="art-n">08</span>Controles y abandonos<span class="art-x">+</span></summary>
@@ -925,7 +925,7 @@ a.sp-free:hover{border-color:var(--green);color:var(--green-dark);box-shadow:non
 <script>
 /* ---------- countdown ---------- */
 (function(){
-  var t = new Date('2027-04-17T08:00:00+02:00').getTime();
+  var t = new Date('2027-04-17T07:30:00+02:00').getTime();
   var d=document.getElementById('cd-d'),h=document.getElementById('cd-h'),
       m=document.getElementById('cd-m'),s=document.getElementById('cd-s');
   function pad(n){return n<10?'0'+n:''+n}
@@ -1181,17 +1181,17 @@ var AVI = {
     {id:"molinos", name:"Los Molinos", km:6.4, ele:618},
     {id:"castanuelo", name:"Castañuelo", km:13.4, ele:461},
     {id:"cortelazor", name:"Cortelazor", km:18.4, ele:592},
-    {id:"valdelarco", name:"Valdelarco", km:29.0, ele:639},
+    {id:"valdelarco", name:"Valdelarco", km:29.0, ele:639, cut:"Corte 12:30 h"},
     {id:"losmarines", name:"Los Marines", km:46.0, ele:674},
     {id:"alajar", name:"Alájar", km:55.6, ele:646},
     {id:"linares", name:"Linares de la Sierra", km:61.0, ele:529},
-    {id:"meta", name:"Meta · Aracena", km:70.0, ele:666, meta:true}
+    {id:"meta", name:"Meta · Aracena", km:70.0, ele:666, meta:true, cut:"Cierre 20:00 h"}
   ],
   trail:[
     {id:"molinos", name:"Los Molinos", km:7.0, ele:637},
-    {id:"losmarines", name:"Los Marines", km:11.5, ele:659},
+    {id:"losmarines", name:"Los Marines", km:11.5, ele:659, cut:"Corte 12:15 h"},
     {id:"linares", name:"Linares de la Sierra", km:19.6, ele:530},
-    {id:"meta", name:"Meta · Aracena", km:25.6, ele:666, meta:true}
+    {id:"meta", name:"Meta · Aracena", km:25.6, ele:666, meta:true, cut:"Cierre 15:00 h"}
   ]
 };
 (function(){
@@ -1309,7 +1309,7 @@ renderMap(); renderProfile(); renderStops(); select(0,true);
   if(pt && Date.now()>=OPEN){ pt.innerHTML='<strong>Inscripciones abiertas</strong>'; document.getElementById('ins-pill').classList.add('open'); }
   var days=document.getElementById('cta-days');
   if(days){
-    var t=new Date('2027-04-17T08:00:00+02:00').getTime();
+    var t=new Date('2027-04-17T07:30:00+02:00').getTime();
     var n=Math.max(0,Math.floor((t-Date.now())/86400000));
     days.textContent = Date.now()<OPEN ? '· apertura 11/11/2026' : '· faltan '+n.toLocaleString('es-ES')+' días';
   }
