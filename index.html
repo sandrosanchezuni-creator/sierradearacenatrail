@@ -371,7 +371,13 @@ button.btn{border:none;cursor:pointer;font-family:var(--display)}
 .ins-date{display:inline-flex;flex-direction:column;align-items:center;gap:4px;margin:4px 0 20px;padding:16px 30px;border:1.5px solid var(--green);border-radius:12px;background:#f3faf5}
 .ins-date-k{font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:var(--green-dark)}
 .ins-date-v{font-family:var(--display);font-weight:700;font-size:clamp(28px,4.4vw,40px);line-height:1;text-transform:uppercase;color:var(--ink)}
+.ins-date-h{font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--green-dark);margin-top:2px}
 @media(max-width:560px){.ins-pill{font-size:13.5px;padding:8px 14px;gap:8px}.ins-date{padding:14px 18px}}
+.ins-form{max-width:1000px;margin:30px auto 0;min-height:420px;text-align:left}
+.ins-form iframe{display:block;width:100%;border:0;background:#fff}
+.ins-fallback{font-size:15px;margin:16px auto 0!important;color:var(--ink-soft)}
+.ins-fallback a{color:var(--green-dark);font-weight:600}
+@media(max-width:560px){.ins-form{margin-top:22px;min-height:520px}}
 .sp-grid.sp-col{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
 .spons .sp-col .sp-card{height:118px;padding:18px 22px;background:#fff}
 .sp-card img{filter:none!important;opacity:1!important}
@@ -543,7 +549,7 @@ a.sp-free:hover{border-color:var(--green);color:var(--green-dark);box-shadow:non
       <a href="#reglamento">Reglamento</a>
       <a href="#colaboradores">Colaboradores</a>
       <a href="#contacto">Contacto</a>
-      <a class="nav-cta" href="#inscripciones">Inscripciones 11/11</a>
+      <a class="nav-cta" id="nav-ins" href="#inscripciones">Inscripciones 11/11</a>
       <div class="nav-extra">
         <span class="nav-extra-k">Síguenos</span>
         <div class="nav-soc">
@@ -577,7 +583,7 @@ a.sp-free:hover{border-color:var(--green);color:var(--green-dark);box-shadow:non
       <div class="cd"><b id="cd-s">—</b><span>Seg</span></div>
     </div>
     <div class="hero-ctas">
-      <a class="btn btn-solid btn-date" href="#inscripciones"><small>Apertura de inscripciones</small>11/11/2026</a>
+      <a class="btn btn-solid btn-date" id="hero-ins" href="#inscripciones"><small>Apertura de inscripciones</small>11/11 · 20:00</a>
       <a class="btn btn-ghost" href="#recorrido">Descubre el recorrido</a>
     </div>
   </div>
@@ -727,8 +733,18 @@ a.sp-free:hover{border-color:var(--green);color:var(--green-dark);box-shadow:non
   <div class="wrap">
     <p class="kicker">Inscripciones</p>
     <h2>Reserva tu dorsal</h2>
-    <div class="ins-date"><span class="ins-date-k">Apertura de inscripciones</span><span class="ins-date-v">11 de noviembre de 2026</span></div>
-    <p>La plataforma de inscripción se anunciará antes de la apertura. Plazas limitadas: 150 en la Ultra 70K y 200 en el Trail 25K. Síguenos en redes para enterarte el primero.</p>
+    <div class="ins-date" id="ins-date"><span class="ins-date-k" id="ins-date-k">Apertura de inscripciones</span><span class="ins-date-v">11 de noviembre de 2026</span><span class="ins-date-h" id="ins-date-h">a las 20:00 h</span></div>
+    <p id="ins-lead">Plazas limitadas: <strong>150</strong> en la Ultra 70K y <strong>200</strong> en el Trail 25K, por riguroso orden de inscripción. El formulario se abre aquí mismo.</p>
+
+    <!-- Formulario de inscripción — Cronius / AvaiBook Sports -->
+    <div class="ins-form">
+      <script type="text/javascript" src="https://inscripciones.croniussport.es/js/iframe/v1/load_iframe.js"></script>
+      <script>
+        abs('inscription_form', 'v-sierra-de-aracena-trail', {"iframe":1,"utm_nooverride":1,"lang":"es","background":"FFFFFF"});
+      </script>
+    </div>
+    <p class="ins-fallback">¿No ves el formulario? <a href="https://inscripciones.croniussport.es/inscripcion/v-sierra-de-aracena-trail/inscripcion_datos/" target="_blank" rel="noopener">Ábrelo en una pestaña nueva</a></p>
+
     <div class="ins-ctas">
       <a class="btn btn-solid" href="https://www.instagram.com/ut_sierra_de_aracena" target="_blank" rel="noopener">Instagram</a>
       <a class="btn btn-line" href="https://www.facebook.com/aracenaut" target="_blank" rel="noopener">Facebook</a>
@@ -747,7 +763,7 @@ a.sp-free:hover{border-color:var(--green);color:var(--green-dark);box-shadow:non
         <h2>Normas de la prueba</h2>
         <p class="regl-lead">Resumen del reglamento de la prueba. Todo participante lo acepta al formalizar su inscripción: léelo con atención, sobre todo el material obligatorio y los cortes de paso. Puedes descargar el <strong>reglamento oficial completo en PDF</strong>; en caso de duda, prevalece esa versión.</p>
       </div>
-      <a class="regl-dl" href="reglamento-sierra-de-aracena-trail-2027.pdf" id="regl-pdf" download="Reglamento V Sierra de Aracena Trail 2027.pdf" type="application/pdf">
+      <a class="regl-dl" href="assets/reglamento-sierra-de-aracena-trail-2027.pdf" id="regl-pdf" download="Reglamento V Sierra de Aracena Trail 2027.pdf" type="application/pdf">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
         Descargar reglamento (PDF)
       </a>
@@ -1301,7 +1317,7 @@ renderMap(); renderProfile(); renderStops(); select(0,true);
 (function(){
   var cta=document.getElementById('stickycta'), hero=document.getElementById('top');
   if(!cta||!hero||!('IntersectionObserver' in window)) return;
-  var OPEN=new Date('2026-11-11T00:00:00+01:00').getTime();
+  var OPEN=new Date('2026-11-11T20:00:00+01:00').getTime();
   var pt=document.getElementById('ins-pill-txt');
   if(pt && Date.now()>=OPEN){ pt.innerHTML='<strong>Inscripciones abiertas</strong>'; document.getElementById('ins-pill').classList.add('open'); }
   var days=document.getElementById('cta-days');
@@ -1313,6 +1329,21 @@ renderMap(); renderProfile(); renderStops(); select(0,true);
   new IntersectionObserver(function(es){
     cta.classList.toggle('show', !es[0].isIntersecting);
   },{threshold:0}).observe(hero);
+})();
+
+/* ---------- inscripciones: cambiar textos al abrir ---------- */
+(function(){
+  if(Date.now() < new Date('2026-11-11T20:00:00+01:00').getTime()) return;
+  var nav=document.getElementById('nav-ins');
+  if(nav) nav.textContent='Inscríbete';
+  var hero=document.getElementById('hero-ins');
+  if(hero) hero.innerHTML='<small>Inscripciones abiertas</small>Inscríbete';
+  var h=document.getElementById('ins-date-h');
+  if(h) h.style.display='none';
+  var k=document.getElementById('ins-date-k');
+  if(k) k.textContent='Inscripciones abiertas desde el';
+  var lead=document.getElementById('ins-lead');
+  if(lead) lead.innerHTML='Plazas limitadas: <strong>150</strong> en la Ultra 70K y <strong>200</strong> en el Trail 25K, por riguroso orden de inscripción. Rellena el formulario para reservar tu dorsal.';
 })();
 
 /* ---------- reglamento: índice rápido ---------- */
