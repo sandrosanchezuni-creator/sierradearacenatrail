@@ -29,6 +29,8 @@ nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(
 header{position:relative;overflow:hidden;background:var(--hero-bg);color:var(--ink-inv)}
 .hero-media{position:absolute;inset:0;z-index:0}
 .hero-media video{width:100%;height:100%;object-fit:cover;display:block}
+.hero-media.static{background:url(assets/da6673cef5bf.jpg) center/cover no-repeat}
+.hero-media.static video{display:none}
 .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,12,8,.72) 0%,rgba(6,12,8,.45) 40%,rgba(6,12,8,.62) 78%,#0b120e 100%)}
 .hero-in{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:88px 20px 60px;text-align:center}
 .eb-short{display:none}
@@ -1331,6 +1333,30 @@ renderMap(); renderProfile(); renderStops(); select(0,true);
   new IntersectionObserver(function(es){
     cta.classList.toggle('show', !es[0].isIntersecting);
   },{threshold:0}).observe(hero);
+})();
+
+/* ---------- hero: si el vídeo no puede reproducirse solo (modo de bajo consumo
+   de iOS, ahorro de datos, navegador que lo bloquea), se retira el vídeo y se
+   deja la foto fija, para que no aparezca el botón de play del sistema ---------- */
+(function(){
+  var v=document.getElementById('herovid');
+  if(!v) return;
+  var media=v.parentNode, resuelto=false;
+  function foto(){
+    if(resuelto) return; resuelto=true;
+    media.classList.add('static');
+    try{ v.pause(); }catch(e){}
+    if(v.parentNode) v.parentNode.removeChild(v);
+  }
+  v.addEventListener('playing', function(){ resuelto=true; }, {once:true});
+  v.addEventListener('error', foto, {once:true});
+  v.addEventListener('stalled', function(){ if(v.currentTime===0) foto(); });
+  var src=v.querySelector('source');
+  if(src) src.addEventListener('error', foto, {once:true});
+  var pr;
+  try{ pr=v.play(); }catch(e){ foto(); }
+  if(pr && pr.catch) pr.catch(foto);
+  setTimeout(function(){ if(!resuelto && (v.paused || v.currentTime===0)) foto(); }, 2500);
 })();
 
 /* ---------- inscripciones: cambiar textos al abrir ---------- */
